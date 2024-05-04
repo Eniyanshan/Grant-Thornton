@@ -1,0 +1,41 @@
+input[type="text"] {
+    width: 600px;
+    padding: 10px;
+    border: 1px solid #454242;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    outline: none; /* Remove the default blue outline */
+}
+
+/* Style for the submit button */
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Style for when the submit button is hovered */
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Style for when the button is hovered */
+button:hover {
+    background-color: #0056b3;
+}
