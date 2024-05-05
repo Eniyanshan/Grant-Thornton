@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import CryptoJS from 'crypto-js';
 import Spinner from "./Spinner";
 import "./Form.css"
@@ -13,6 +13,14 @@ function Form(){
   const [isLoading,setIsLoader] = useState(false);
 
   const [dataObj, setDataObj] = useState({})
+
+//   useEffect(() => {
+//     if (decryptedText) {
+//         setTimeout(() => {
+//             document.getElementById("decryptedText").classList.add("marquee");
+//         }, 5000);
+//     }
+// }, [decryptedText]);
 
 
     function handleSubmit(){
@@ -32,7 +40,9 @@ function Form(){
 
         const encrypted = CryptoJS.AES.encrypt(JSON.stringify(output), 'secret key').toString();
         setEncryptedText(encrypted);
-        alert(encrypted)
+        alert(`Encrypted Data\n${encrypted}`); 
+
+
 
 
         const decrypted = CryptoJS.AES.decrypt(encrypted, 'secret key').toString(CryptoJS.enc.Utf8);
@@ -48,16 +58,17 @@ function Form(){
         <div style={{textAlign:"center"}}>
 
             {isLoading ? <Spinner/> :
-            <div style={{marginTop:"50px"}}>
-            <input type="text"  onChange={(e)=>setInputValue(e.target.value)}/>
+            <div style={{marginTop:"70px"}}>
+                {/* <label htmlFor="inputField">Enter Your Text Here:</label> */}
+            <input type="text"   placeholder="Enter Your Text Here You want To Convert"  onChange={(e)=>setInputValue(e.target.value)}/>
             <br />
             <button style={{marginTop:"20px"}} onClick={handleSubmit}>Submit</button>
-           
+            {/* <hr /> */}
 
-        <div>
-        {/* <p>Encrypted Text: {encryptedText}</p> */}
-        <p>Decrypted Text: {JSON.stringify(decryptedText)}</p>
-      </div>
+            <div>
+                    <p>Your Decrypted Text Shown Below</p>
+                    <textarea style={{width:"45.5%",borderRadius:"6px"}} rows="4" cols="50"  readOnly value={JSON.stringify(decryptedText)} />
+                </div>
       </div>
 }
       

@@ -8,13 +8,13 @@ footer {
     width: 100%;
     background-color: #333;
     color: #fff;
-    padding: 20px 0;
+    padding: 20px 20px;
   }
 
 .square{
     width: 100%;
     height: auto;
-    margin-top: 48px;
+    /* margin-top: 48px; */
     padding: 0px !important;
     padding-bottom: 20px;
 }
@@ -38,7 +38,7 @@ footer {
 
 .heading{
     margin-top: 20px;
-    font-size: 38px;
+    font-size: 34px;
     color: #00a991;
     font-weight: bold;
     text-align: center;
@@ -80,6 +80,7 @@ footer {
 .social-media{
     text-align: center;
     margin-top: 20px;
+    display:none;
 }
 
 .social-media li{
@@ -116,4 +117,15 @@ footer {
     }
 } */
 
+@media only screen and (max-width:767px){
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #333;
+        color: #fff;
+        height: 50%;
+        padding: 20px 20px 0 9px;
+      }
 
+}
